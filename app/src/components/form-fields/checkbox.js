@@ -1,5 +1,5 @@
 import React from 'react';
-import { fieldPropTypes } from '../../util/proptype-utils';
+import { checkBoxPropTypes } from '../../util/proptype-utils';
 
 const Checkbox = ({ input, meta, id, label = '', extraClasses = '' }) => (
   <div>
@@ -9,6 +9,6 @@ const Checkbox = ({ input, meta, id, label = '', extraClasses = '' }) => (
   </div>
 );
 
-Checkbox.propTypes = fieldPropTypes;
+Checkbox.propTypes = checkBoxPropTypes;
 
 export default Checkbox;

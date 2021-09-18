@@ -7,7 +7,7 @@ import GenericForm from '../form-fields/generic-form';
 import { resetPassword, RESET_PASSWORD } from '../../redux/modules/authentication';
 import { errorPropTypes } from '../../util/proptype-utils';
 import './authentication.scss';
-import { getComponentTranslator } from '../../util/i18n';
+import { getComponentTranslator } from '../../util/i18n-util';
 import { Translate } from 'react-i18nify';
 
 const translate = getComponentTranslator('resetPassword');

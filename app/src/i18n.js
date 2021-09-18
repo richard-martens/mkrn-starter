@@ -1,4 +1,8 @@
-export default {
+
+import { setLocale, setTranslations } from 'react-i18nify';
+import { getClientLanguage } from './util/i18n-util';
+
+const translations = {
     en: {
         dashboard: {
             welcomeText: "Welcome to the dashboard"
@@ -14,7 +18,8 @@ export default {
             login: "Sign in",
             logout: "Sign out",
             profile: "Profile",
-            register: "Register"
+            register: "Register",
+            settings: "Settings"
         },
         login: {
             email: "Email",
@@ -42,6 +47,11 @@ export default {
             password: "Password",
             submit: "Change Password",
             title: "Reset Password"
+        },
+        settings: {
+            registerOn: "New users are allowed to register themselves",
+            submit: "Save",
+            title: "Settings"
         }
     },
     de: {
@@ -59,7 +69,8 @@ export default {
             login: "Anmelden",
             logout: "Abmelden",
             profile: "Profil",
-            register: "Registrieren"
+            register: "Registrieren",
+            settings: "Einstellungen"
         },
         login: {
             email: "Email",
@@ -87,6 +98,16 @@ export default {
             password: "Kennwort",
             submit: "Kennwort ändern",
             title: "Kennwort zurücksetzen"
+        },
+        settings: {
+            registerOn: "Neue Benutzer dürfen sich selbst registrieren",
+            submit: "Speichern",
+            title: "Einstellungen"
         }
     }
 };
+
+setTranslations(translations);
+setLocale(getClientLanguage() || 'en');
+
+export default translations;

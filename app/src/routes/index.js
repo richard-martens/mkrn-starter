@@ -6,6 +6,7 @@ import ForgotPassword from '../components/authentication/forgot-password';
 import ResetPassword from '../components/authentication/reset-password';
 import RequireAuth from '../components/hoc/require-auth';
 import AuthenticatedRoutes from './authenticated/';
+import Settings from '../components/settings/settings';
 
 const TopLevelRoutes = () => (
   <Switch>
@@ -14,6 +15,7 @@ const TopLevelRoutes = () => (
     <Route exact path="/forgot-password" component={ForgotPassword} />
     <Route path="/reset-password/:token" component={ResetPassword} />
     <Route path="/dashboard" component={RequireAuth(AuthenticatedRoutes)} />
+    <Route path="/settings" component={RequireAuth(Settings)} />
   </Switch>
 );
 

@@ -8,7 +8,7 @@ import GenericForm from '../form-fields/generic-form';
 import { login, CHANGE_AUTH } from '../../redux/modules/authentication';
 import { errorPropTypes } from '../../util/proptype-utils';
 import './authentication.scss';
-import { getComponentTranslator } from '../../util/i18n';
+import { getComponentTranslator } from '../../util/i18n-util';
 import { Translate } from 'react-i18nify';
 
 const translate = getComponentTranslator('login');

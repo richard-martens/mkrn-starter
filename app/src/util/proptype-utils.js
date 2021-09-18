@@ -18,3 +18,18 @@ export const fieldPropTypes = {
   extraClasses: PropTypes.string,
   label: PropTypes.string,
 };
+
+
+export const checkBoxPropTypes = {
+  input: PropTypes.shape({
+    name: PropTypes.string,
+    checked: PropTypes.bool,
+  }),
+  meta: PropTypes.shape({
+    error: PropTypes.string,
+  }),
+  id: PropTypes.string,
+  type: PropTypes.string,
+  extraClasses: PropTypes.string,
+  label: PropTypes.string,
+};

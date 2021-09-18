@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { getAuthenticatedUser } from '../../redux/modules/user';
 import { logoutUser } from '../../redux/modules/authentication';
 import { mobileBreakpoint } from '../../constants/ui-constants';
-import { getComponentTranslator } from '../../util/i18n';
+import { getComponentTranslator } from '../../util/i18n-util';
 
 const translate = getComponentTranslator('header');
 
@@ -37,6 +37,11 @@ class Header extends Component {
         name: (user && user.firstName) || translate('profile'),
         link: 'profile',
         authenticated: true,
+      },
+      {
+        name: translate('settings'),
+        link: 'settings',
+        authenticated:true
       },
       {
         name: translate('logout'),

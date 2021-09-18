@@ -17,7 +17,7 @@ export const updateStore = (state, action, extraValues = {}) => {
       return {
         ...state,
         ...extraValues,
-        messages: { ...state.messages, [type]: _.get(payload, 'message') },
+        messages: { ...state.messages, [type]: _.get(payload, 'message') || '' },
         loading: { ...state.loading, [type]: false },
         errors: { ...state.errors, [type]: [] },
       };
@@ -69,7 +69,16 @@ export const buildGenericInitialState = constants => ({
  * @param {String}   type     Action type constant for error received
  */
 export const handleError = (dispatch, error, type) => {
-  const foundError = _.get(error, 'response.data.errors') || [{ error }];
+  var foundError = _.get(error, 'response.data.errors');
+  
+  if(!foundError) {
+    foundError = typeof(_.get(error, 'response.data')) === 'string' ? { error: _.get(error, 'response.data') } : { error };
+  } 
+
+  if(!Array.isArray(foundError)) {
+    foundError = [foundError];
+  }
+                    
   return dispatch({
     type,
     payload: foundError,
